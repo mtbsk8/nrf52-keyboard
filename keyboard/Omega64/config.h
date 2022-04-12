@@ -26,8 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CONF_VENDOR_ID 0x4366 /* 配置项目内显示的VendorID */
 #define CONF_PRODUCT_ID 0x0317 /* 配置项目内显示的ProductID */
 #define DEVICE_VER 0x0000 /* 硬件版本 */
-#define MANUFACTURER "Lotlab" /* 硬件制造商，用于蓝牙显示 */
-#define PRODUCT "Omega64" /* 硬件名词，用于蓝牙显示 */
+#define MANUFACTURER "Meski" /* 硬件制造商，用于蓝牙显示 */
+#define PRODUCT "GT64" /* 硬件名词，用于蓝牙显示 */
 #define MACADDR_SEPRATOR ' ' /* 蓝牙名称后地址的分隔符。若不设置则不显示蓝牙名称后面的地址 */
 
 /* USB HID report parameter */
@@ -72,28 +72,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LED_CAPS 4
 
 // ws2812 RGB 配置
-#define RGB_DI_PIN 10
-#define RGBLED_NUM 8
+#define RGB_DI_PIN 1
+#define RGBLED_NUM 10
 #define RGBLIGHT_ANIMATIONS
-#define RGB_PWR_PIN 11 // P-mos
+#define RGB_PWR_PIN 0 // P-mos
 //#define RGB_PWR_PIN_REVERSE 20 // N-mos
 
 // 3灯指示配置引脚
-#define LED_STATUS_BLE 7
-#define LED_STATUS_USB 6
+#define LED_STATUS_BLE 3
+#define LED_STATUS_USB 4
 #define LED_STATUS_CHARGING 5
-#define LED_BLE_CHANNEL1 7
-#define LED_BLE_CHANNEL2 6
-#define LED_BLE_CHANNEL3 5
+#define LED_BLE_CHANNEL1 8
+#define LED_BLE_CHANNEL2 9
+#define LED_BLE_CHANNEL3 10
 #define LED_POSITIVE // LED上拉驱动
 
 // 独立硬件按钮
-#define POWER_BUTTON 3
+#define POWER_BUTTON 21
 
 // USB UART 传输配置
 #define HAS_USB // 启用与CH554的通信支持
-#define UART_RXD 8 // UART_RX口IO 17
-#define UART_TXD 9 // UART_TX口IO 18
+#define UART_RXD 6 // UART_RX口IO 17
+#define UART_TXD 7 // UART_TX口IO 18
 //#define UART_DET 19 // UART 检测引脚，若此脚被拉低，则说明USB正在工作。若不配置则使用RX口作为检测引脚
 #define UART_BAUDRATE NRF_UART_BAUDRATE_115200 // 通信波特率，请不要修改
 
@@ -112,8 +112,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)))
 
-static const uint8_t row_pin_array[MATRIX_ROWS] = { 27, 26, 30, 29, 28 };
-static const uint8_t column_pin_array[MATRIX_COLS] = { 21, 22, 23, 24, 25, 20, 19, 18, 17, 16, 15, 14, 13, 12 };
+static const uint8_t row_pin_array[MATRIX_ROWS] = { 26, 27, 28, 29, 30 };
+static const uint8_t column_pin_array[MATRIX_COLS] = { 25, 24, 23, 22, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11 };
 #define ROW_IN // 键盘阵列的二极管方向是从COL->ROW
 
 /* define if matrix has ghost */
